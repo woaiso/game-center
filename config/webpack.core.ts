@@ -10,7 +10,7 @@ import entrys from './entry';
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Babel 配置
@@ -23,6 +23,24 @@ const babelLoader = `babel-loader?${JSON.stringify(babelConfig)}`;
 const webpackEntry = {};
 entrys.forEach((entryName) => {
   webpackEntry[entryName] = path.resolve(SOURCE_PATH, `${entryName}/index.tsx`);
+});
+
+
+const htmlPlugins = entrys.map((entryName) => {
+  return new HtmlWebpackPlugin({
+    title: entryName,
+    filename: `${entryName}.html`,
+    template: path.join(SOURCE_PATH, `${entryName}/template.ejs`),
+    inject: 'body',
+    minify: {}, //https://github.com/kangax/html-minifier#options-quick-reference
+    hash: true, //if true then append a unique webpack compilation hash to all included scripts and CSS files. This is useful for cache busting.
+    cache: true, //true (default) try to emit the file only if it was changed.
+    showErrors: true, // if true (default) errors details will be written into the HTML page.
+    chunks: ['vendor', entryName],
+    chunksSortMode: 'auto', // Allows to control how chunks should be sorted before they are included to the html. Allowed values: 'none' | 'auto' | 'dependency' | {function} - default: 'auto'
+    excludeChunks: ['unit-test'],
+    xhtml: false //If true render the link tags as self-closing, XHTML compliant. Default is false
+  });
 });
 
 //生产环境默认关闭SourceMap
@@ -157,6 +175,7 @@ export class WebpackConfig {
     ]
   }
   plugins = [
+    ...htmlPlugins,
     new ExtractTextPlugin({ filename: 'css/[name].css', disable: !IS_PRODOCTION }),
     //https://webpack.js.org/plugins/commons-chunk-plugin/#components/sidebar/sidebar.jsx
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' })

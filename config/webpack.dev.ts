@@ -14,26 +14,6 @@ const webpack = require('webpack');
 const HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin;
 const NoEmitOnErrorsPlugin = webpack.NoEmitOnErrorsPlugin;
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-//Dev 环境需要给每个Entry 配置一个HTML  方便调试开发
-
-const htmlPlugins = entrys.map((entryName) => {
-  return new HtmlWebpackPlugin({
-    title: entryName,
-    filename: `${entryName}.html`,
-    template: path.join(SOURCE_PATH, `${entryName}/template.ejs`),
-    inject: 'body',
-    minify: {}, //https://github.com/kangax/html-minifier#options-quick-reference
-    hash: true, //if true then append a unique webpack compilation hash to all included scripts and CSS files. This is useful for cache busting.
-    cache: true, //true (default) try to emit the file only if it was changed.
-    showErrors: true, // if true (default) errors details will be written into the HTML page.
-    chunks: ['vendor', entryName],
-    chunksSortMode: 'auto', // Allows to control how chunks should be sorted before they are included to the html. Allowed values: 'none' | 'auto' | 'dependency' | {function} - default: 'auto'
-    excludeChunks: ['unit-test'],
-    xhtml: false //If true render the link tags as self-closing, XHTML compliant. Default is false
-  });
-});
 
 class WebpackDev {
   devServer = {
@@ -116,7 +96,6 @@ class WebpackDev {
    * @memberOf WebpackDev
    */
   plugins = [
-    ...htmlPlugins,
     new HotModuleReplacementPlugin(),
     // https://github.com/MoOx/eslint-loader#noerrorsplugin
     new NoEmitOnErrorsPlugin()
