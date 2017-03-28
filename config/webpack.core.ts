@@ -22,14 +22,14 @@ const babelLoader = `babel-loader?${JSON.stringify(babelConfig)}`;
  */
 const webpackEntry = {};
 entrys.forEach((entryName) => {
-	webpackEntry[ entryName ] = path.resolve(SOURCE_PATH, `${entryName}/index.tsx`);
+  webpackEntry[entryName] = path.resolve(SOURCE_PATH, `${entryName}/index.tsx`);
 });
 
 //生产环境默认关闭SourceMap
 const sourceMapEnable = IS_PRODOCTION ? false : true
 
 export class WebpackConfig {
-  cache?: boolean = true
+  cache = true
   devtool = sourceMapEnable ? 'source-map' as 'source-map' : false
   entry = entrys
   output = {
@@ -37,7 +37,7 @@ export class WebpackConfig {
     filename: '[name].js',
     sourceMapFilename: '[file].map',
     chunkFilename: '[id].chunk.js',
-    publicPath: '/components/dist/'
+    publicPath: ''
   }
   resolve = {
     //定义从package.json 的什么字段上去读入口文件
@@ -56,9 +56,7 @@ export class WebpackConfig {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'lodash': '_',
-    'axios': 'axios',
-    'moment/locale/zh-cn': 'moment',
-    'moment': 'moment'
+    'axios': 'axios'
   }
   module = {
     rules: [
@@ -68,7 +66,6 @@ export class WebpackConfig {
       },
       {
         exclude: /(node_modules|bower_components)/,
-        include: [path.join(CWD, 'src'), /jms-design/],
         test: /\.(js|jsx)$/,
         loader: babelLoader
       },
@@ -122,33 +119,6 @@ export class WebpackConfig {
         })
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
-                localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
-              }
-            },
-            {
-              loader: 'resolve-url-loader'
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: sourceMapEnable
-              }
-            }, {
-              loader: 'postcss-loader'
-            }
-          ]
-        })
-      },
-      {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
@@ -177,7 +147,7 @@ export class WebpackConfig {
         }
       },
       {
-        test: /\.(png|jpg|ico)$/,
+        test: /\.(png|jpg|gif|ico)$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
