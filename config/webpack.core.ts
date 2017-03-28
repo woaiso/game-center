@@ -71,10 +71,10 @@ export class WebpackConfig {
     }
   }
   externals = {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'lodash': '_',
-    'axios': 'axios'
+    // 'react': 'React',
+    // 'react-dom': 'ReactDOM',
+    // 'lodash': '_',
+    // 'axios': 'axios'
   }
   module = {
     rules: [
