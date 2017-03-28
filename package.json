@@ -1,0 +1,27 @@
+{
+  "name": "game-center",
+  "version": "0.0.1",
+  "description": "game center",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woaiso/game-center.git"
+  },
+  "keywords": [
+    "game",
+    "center"
+  ],
+  "author": "superk",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/woaiso/game-center/issues"
+  },
+  "homepage": "https://github.com/woaiso/game-center#readme",
+  "devDependencies": {
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.2"
+  }
+}
