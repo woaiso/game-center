@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/woaiso/game-center#readme",
   "devDependencies": {
+    "@types/node": "^7.0.12",
     "tslint": "^4.5.1",
+    "tslint-react": "^2.5.0",
     "typescript": "^2.2.2"
   },
   "dependencies": {
