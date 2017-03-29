@@ -11,12 +11,17 @@ if (/iphone|ipad|ipod/.test(ua)) {
 
 
 //自动设置ROOT fontSize
-const pxUnit = postcssConfig.plugins['postcss-pxtorem'].rootValue;     // 在px2rem中预设rem的值 即 1rem = ? px
-const designWid = 750;  // 设计稿宽度
-const winWid = document.body.clientWidth;
-const winHei = document.body.clientHeight;
-const bl = winWid / designWid;
-const html = document.querySelector('html');
-if (html) {
-  html.style.fontSize = (bl * pxUnit) + 'px';
+function autoRootFontSize() {
+  const pxUnit = postcssConfig.plugins['postcss-pxtorem'].rootValue;     // 在px2rem中预设rem的值 即 1rem = ? px
+  const designWid = 750;  // 设计稿宽度
+  const winWid = document.body.clientWidth;
+  const winHei = document.body.clientHeight;
+  const bl = winWid / designWid;
+  const html = document.querySelector('html');
+  if (html) {
+    html.style.fontSize = (bl * pxUnit) + 'px';
+  }
 }
+window.addEventListener('resize', autoRootFontSize);
+autoRootFontSize();
+

@@ -17,10 +17,8 @@ class Main extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <Header />
-        Game Center
-
-        </div>
+        <Header title="我的游戏" />
+      </div>
     );
   }
 }
