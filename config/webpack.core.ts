@@ -125,15 +125,15 @@ export class WebpackConfig {
               }
             },
             {
-              loader: 'postcss-loader'
-            },
-            {
               loader: 'less-loader',
               options: {
                 sourceMap: sourceMapEnable,
                 //传入全局的样式配置
                 modifyVars: themeConfig
               }
+            },
+            {
+              loader: 'postcss-loader'
             }
           ]
         })
