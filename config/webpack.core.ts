@@ -46,10 +46,12 @@ const htmlPlugins = entrys.map((entryName) => {
 //生产环境默认关闭SourceMap
 const sourceMapEnable = IS_PRODOCTION ? false : true
 
+webpackEntry['vendor'] = ['react', 'react-dom'];
+
 export class WebpackConfig {
   cache = true
   devtool = sourceMapEnable ? 'source-map' as 'source-map' : false
-  entry = entrys
+  entry = webpackEntry
   output = {
     path: BUILD,
     filename: '[name].js',
