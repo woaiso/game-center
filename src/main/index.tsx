@@ -11,6 +11,7 @@ import * as ReactDOM from 'react-dom';
 
 import Header from './../components/header';
 import './respones';
+import 'normalize.css/normalize.css';
 
 class Main extends React.Component<any, any> {
   render() {
