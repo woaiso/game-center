@@ -17,32 +17,71 @@ const head_bg = require('./../images/head_bg.png');
 const head = require('./../images/head.png');
 const gameIcon = require('./../images/game_01.png');
 
-const games = [
+const gamelist = [
   {
-    icon: require('./../images/game_01.png'),
-    text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
+    title: '最近在玩',
+    games: [
+      {
+        icon: require('./../images/game_01.png'),
+        text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
+      },
+      {
+        icon: require('./../images/game_02.png'),
+        text: '糖果苏打传奇'
+      },
+      {
+        icon: require('./../images/game_03.png'),
+        text: '冒险村物语'
+      },
+      {
+        icon: require('./../images/game_04.png'),
+        text: '地牢战争'
+      }
+    ]
   },
   {
-    icon: require('./../images/game_02.png'),
-    text: '糖果苏打传奇'
-  },
-  {
-    icon: require('./../images/game_03.png'),
-    text: '冒险村物语'
-  },
-  {
-    icon: require('./../images/game_04.png'),
-    text: '地牢战争'
-  },
+    title: '最近下载',
+    games: [
+      {
+        icon: require('./../images/game_01.png'),
+        text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
+      },
+      {
+        icon: require('./../images/game_02.png'),
+        text: '糖果苏打传奇'
+      },
+      {
+        icon: require('./../images/game_03.png'),
+        text: '冒险村物语'
+      },
+      {
+        icon: require('./../images/game_04.png'),
+        text: '地牢战争'
+      }
+    ]
+  }
 ]
 
-const GameItem = ({ game }) => (
+const GameItem = ({ gameItem }) => (
   <li className="item">
-    <div className="icon" style={{ backgroundImage: 'url(' + game.icon + ')' }} />
+    <div className="icon" style={{ backgroundImage: 'url(' + gameItem.icon + ')' }} />
     <span className="name">
-      {game.text}
+      {gameItem.text}
     </span>
   </li>
+);
+
+const Game = ({ game }) => (
+  <section className="g-item">
+    <div className="title">
+      <h5>{game.title}</h5>
+    </div>
+    <div className="game-list">
+      <ul>
+        {game.games.map((item, index) => <GameItem gameItem={item} key={index} />)}
+      </ul>
+    </div>
+  </section>
 );
 
 class Main extends React.Component<any, any> {
@@ -59,16 +98,7 @@ class Main extends React.Component<any, any> {
         </div>
         {/*中间内容区*/}
         <div className="game-content">
-          <section className="g-item">
-            <div className="title">
-              <h5>最近在玩</h5>
-            </div>
-            <div className="game-list">
-              <ul>
-                {games.map((item, index) => <GameItem game={item} key={index} />)}
-              </ul>
-            </div>
-          </section>
+          {gamelist.map((game, index) => <Game game={game} key={index} />)}
         </div>
       </div>
     );
