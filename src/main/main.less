@@ -1,6 +1,7 @@
 @import './../components/style/base.less';
 .page {
   background: #f2f2f2;
+  padding-top: 88px;
 }
 
 .head-content {
@@ -114,6 +115,40 @@
         &.current {
           color: #669FEC;
           border-bottom-color: #669FEC;
+        }
+      }
+    }
+  }
+  /***时间轴****/
+  .t-content {
+    .t-item {
+      display: flex;
+      padding: 32px 24px;
+      .date {
+        padding-right: 24px;
+        text-align: center;
+        .day {
+          display: block;
+          line-height: 24px;
+          font-size: 36px;
+          font-weight: bold;
+          color: @font-color;
+        }
+        .month {
+          display: block;
+          padding-top: 6px;
+          font-size: 22px;
+          color: @font-color;
+        }
+      }
+      .card {
+        flex: 1;
+        padding: 30px;
+        border: 1px solid #E4E4E4;
+        background: #FFF;
+        .title {
+          font-size: 28px;
+          color: @font-color;
         }
       }
     }
