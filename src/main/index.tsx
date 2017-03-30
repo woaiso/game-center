@@ -15,7 +15,7 @@ import 'normalize.css/normalize.css';
 import './main.less';
 const head_bg = require('./../images/head_bg.png');
 const head = require('./../images/head.png');
-const gameIcon = require('./../images/game_01.png');
+const exampleIcon = require('./../images/game_01.png');
 
 const gamelist = [
   {
@@ -126,7 +126,19 @@ const TimeLine = () => (
             <span className="month">12月</span>
           </span>
           <div className="card">
-            <h5 className="title">最近登录</h5>
+            <h5 className="title">最近登录 <span className="sub">2016-10-11加入</span> </h5>
+            <div className="game-item-h">
+              <div className="icon" style={{ backgroundImage: 'url(' + exampleIcon + ')' }} />
+              <div className="detail">
+                <h5 className="title">太空猫和原子猫头鹰子猫...</h5>
+                <div>
+                  <button className="group-badge">策略类</button>
+                </div>
+                <div className="sub-title">
+                  搜集小伙伴一起战斗吧！集小伙伴一意起
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </li>
