@@ -87,7 +87,7 @@ const Game = ({ game }) => (
 class Main extends React.Component<any, any> {
   render() {
     return (
-      <div>
+      <div className="page">
         <Header title="我的游戏" />
         {/*头部区域*/}
         <div className="head-content" style={{ backgroundImage: 'url(' + head_bg + ')' }}>
@@ -100,9 +100,41 @@ class Main extends React.Component<any, any> {
         <div className="game-content">
           {gamelist.map((game, index) => <Game game={game} key={index} />)}
         </div>
+        {/*历程*/}
+        <TimeLine />
       </div>
     );
   }
 }
+
+const TimeLine = () => (
+  <div className="timeline">
+    <div className="head">
+      <h5 className="title">历程</h5>
+      <div className="tabs">
+        <div className="tab current">全部</div>
+        <div className="tab">手游</div>
+        <div className="tab">H5</div>
+      </div>
+    </div>
+    {/*历程时间轴*/}
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+);
+
 
 ReactDOM.render(<Main />, document.getElementById('root'));

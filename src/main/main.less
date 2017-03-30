@@ -1,4 +1,8 @@
 @import './../components/style/base.less';
+.page {
+  background: #f2f2f2;
+}
+
 .head-content {
   height: 170px;
   background-size: 100%;
@@ -25,8 +29,7 @@
 }
 
 .game-content {
-  padding-top: 20px;
-  background: #F2F2F2;
+  margin-top: 20px;
 }
 
 .g-item {
@@ -78,6 +81,40 @@
       }
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+}
+
+
+/***历程****/
+
+.timeline {
+  padding-top: 20px;
+  .head {
+    background: #FFF;
+    .title {
+      padding: 30px 20px;
+      font-size: 32px;
+      font-weight: bold;
+      color: @font-color;
+    }
+    .tabs {
+      display: flex;
+      border-top: 1px solid #E4E4E4;
+      border-bottom: 1px solid #e4e4e4;
+      .tab {
+        flex: 1;
+        height: 90px;
+        line-height: 90px;
+        font-size: 32px;
+        text-align: center;
+        border-bottom: 4px solid transparent;
+        color: #8E8E8E;
+        &.current {
+          color: #669FEC;
+          border-bottom-color: #669FEC;
+        }
       }
     }
   }
