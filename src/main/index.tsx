@@ -21,13 +21,20 @@ class Main extends React.Component<any, any> {
     return (
       <div>
         <Header title="我的游戏" />
-        <div className="game-content">
-          <div className="head-content" style={{ backgroundImage: 'url(' + head_bg + ')' }}>
-            <div className="head-inner">
-              <img src={head} className="user-head" />
-              <span className="user-text">侞果僾不篱</span>
-            </div>
+        {/*头部区域*/}
+        <div className="head-content" style={{ backgroundImage: 'url(' + head_bg + ')' }}>
+          <div className="head-inner">
+            <img src={head} className="user-head" />
+            <span className="user-text">侞果僾不篱</span>
           </div>
+        </div>
+        {/*中间内容区*/}
+        <div className="game-content">
+          <section className="g-item">
+            <div className="title">
+              <h5>最近在玩</h5>
+            </div>
+          </section>
         </div>
       </div>
     );
