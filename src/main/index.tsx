@@ -84,7 +84,7 @@ const Game = ({ game }) => (
   </section>
 );
 
-class Main extends React.Component<any, any> {
+export default class Main extends React.Component<any, any> {
   render() {
     return (
       <div className="page">
