@@ -1,4 +1,4 @@
-@import './../components/style/base.less';
+@import './../components/style/variable.less';
 .page {
   background: #f2f2f2;
   padding-top: 88px;
@@ -123,13 +123,16 @@
   .t-content {
     .t-item {
       display: flex;
+      overflow: hidden;
+      align-items: flex-start;
+      justify-content: space-between;
       padding: 32px 24px;
       .date {
         padding-right: 24px;
         text-align: center;
         .day {
           display: block;
-          line-height: 24px;
+          line-height: 26px;
           font-size: 36px;
           font-weight: bold;
           color: @font-color;
@@ -138,6 +141,7 @@
           display: block;
           padding-top: 6px;
           font-size: 22px;
+          white-space: nowrap;
           color: @font-color;
         }
       }
@@ -159,6 +163,12 @@
         }
       }
     }
+    .year {
+      padding: 0 24px;
+      font-size: 36px;
+      font-weight: bold;
+      color: @font-color;
+    }
   }
 }
 
@@ -166,14 +176,33 @@
 /***单行一个游戏**/
 
 .game-item-h {
-  display: flex;
   .icon {
     width: 146px;
     height: 146px;
     background-size: 100%;
     background-repeat: no-repeat;
+    margin-right: 20px;
+    float: left;
   }
   .detail {
-    padding-left: 20px;
+    height: 146px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+    }
+    .sub-title {
+      margin-top: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: none;
+      white-space: nowrap;
+      font-size: 24px;
+      color: #8E8E8E;
+    }
   }
 }
