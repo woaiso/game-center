@@ -161,5 +161,4 @@ const TimeLine = () => (
   </div>
 );
 
-
 ReactDOM.render(<Main />, document.getElementById('root'));
