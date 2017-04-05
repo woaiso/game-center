@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 // import WeUI from 'react-weui';
 
@@ -212,4 +213,12 @@ const TimeLine = ({ timeline }) => (
   </li>
 );
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+const BasicRouter = () => (
+  <Router>
+    <div>
+      <Route exact={true} path="/" component={Main} />
+    </div>
+  </Router>
+);
+
+ReactDOM.render(<BasicRouter />, document.getElementById('root'));
