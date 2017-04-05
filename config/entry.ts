@@ -6,7 +6,7 @@
  * 定义一共有多少页面
  */
 const entry = [
-	'main'
+	'index'
 ];
 
 export default entry;
