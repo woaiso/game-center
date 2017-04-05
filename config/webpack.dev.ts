@@ -22,6 +22,7 @@ class WebpackDev {
     port: 3000,
     hot: true,
     quiet: false,
+    historyApiFallback: true,
     stats: {
       // Add asset Information
       assets: true,
