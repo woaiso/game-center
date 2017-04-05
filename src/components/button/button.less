@@ -20,15 +20,26 @@
   font-kerning: none;
   user-select: none;
   outline: none;
+  border: none;
+  background: @primary;
+  color: #FFF;
   &.button-primary {
     color: @primary;
   }
   &.button-outline {
     border-width: 1px;
     border-style: solid;
-    border-radius: 4px;
     border-color: @primary;
     color: @primary;
     background-color: transparent;
+  }
+  &.button-default{
+    border-radius: 4px;
+  }
+  &.button-large {
+    width: 402px;
+    height: 80px;
+    font-size: 36px;
+    border-radius: 10px;
   }
 }
