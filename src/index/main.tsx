@@ -134,31 +134,36 @@ export default class Main extends React.Component<any, any> {
     return (
       <div className="page">
         <Header title="我的游戏" />
-        {/*头部区域*/}
-        <div className="head-content" style={{ backgroundImage: 'url(' + head_bg + ')' }}>
-          <div className="head-inner">
-            <img src={head} className="user-head" />
-            <span className="user-text">侞果僾不篱</span>
-          </div>
-        </div>
-        {/*中间内容区*/}
-        <div className="game-content">
-          {gamelist.map((game, index) => <Game game={game} key={index} />)}
-        </div>
-        {/*历程*/}
-        <div className="timeline">
-          <div className="head">
-            <h5 className="title">历程</h5>
-            <div className="tabs">
-              <div className="tab current">全部</div>
-              <div className="tab">手游</div>
-              <div className="tab">H5</div>
+        <div className="content">
+          <div className="fixed-content" />
+          <div className="scroll-content">
+            {/*头部区域*/}
+            <div className="head-content" style={{ backgroundImage: 'url(' + head_bg + ')' }}>
+              <div className="head-inner">
+                <img src={head} className="user-head" />
+                <span className="user-text">侞果僾不篱</span>
+              </div>
+            </div>
+            {/*中间内容区*/}
+            <div className="game-content">
+              {gamelist.map((game, index) => <Game game={game} key={index} />)}
+            </div>
+            {/*历程*/}
+            <div className="timeline">
+              <div className="head">
+                <h5 className="title">历程</h5>
+                <div className="tabs">
+                  <div className="tab current">全部</div>
+                  <div className="tab">手游</div>
+                  <div className="tab">H5</div>
+                </div>
+              </div>
+              {/*历程时间轴*/}
+              <ul className="t-content">
+                {timelines.map((timeline, index) => (timeline as any).year ? <Year year={(timeline as any).year} /> : <TimeLine timeline={timeline} key={index} />)}
+              </ul>
             </div>
           </div>
-          {/*历程时间轴*/}
-          <ul className="t-content">
-            {timelines.map((timeline, index) => (timeline as any).year ? <Year year={(timeline as any).year} /> : <TimeLine timeline={timeline} key={index} />)}
-          </ul>
         </div>
       </div>
     );

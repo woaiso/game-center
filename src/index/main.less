@@ -1,13 +1,48 @@
 @import './../components/style/variable.less';
 .page {
-  background: #f2f2f2;
-  padding-top: 88px;
   position: absolute;
-  width: 100%;
   top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    &.white {
+      background: #FFF;
+    }
+  }
+}
+
+.fixed-content {
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
+  display: block;
+  margin-top: 88px;
+}
+
+.scroll-content {
+  position: absolute;
+  top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 88px;
+  z-index: 1;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
 }
 
 .head-content {
@@ -218,12 +253,19 @@
 /*****没有数据展示*********/
 
 .no-data-wrap {
+  width: 100%;
   text-align: center;
-  background: #FFF;
-  margin-top: .2rem;
-  .text {
-    font-size: 30px;
-    color: #8E8E8E;
-    margin: 38px 0 40px;
+  background: #f2f2f2;
+  padding-top: .2rem;
+  .box {
+    width: 100%;
+    margin-top: -167px;
+    position: absolute;
+    top: 50%;
+    .text {
+      font-size: 30px;
+      color: #8E8E8E;
+      margin: 38px 0 40px;
+    }
   }
 }
