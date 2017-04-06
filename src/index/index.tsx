@@ -7,12 +7,14 @@ import './main.less';
 
 import Main from './main';
 import MyGameTemp from './my-game-temp';
+import Games from './games';
 
 const BasicRouter = () => (
   <Router>
     <div>
       <Route exact={true} path="/" component={Main} />
       <Route path="/my-game-temp" component={MyGameTemp} />
+      <Route path="/games" component={Games} />
     </div>
   </Router>
 );
