@@ -22,7 +22,7 @@ const GameItem = ({ gameItem }) => (
 export const Game = ({ game }) => (
   <section className="g-item">
     <div className="title">
-      <h5>{game.title}<a className="pull-right" href={game.more}>更多</a></h5>
+      <h5>{game.title}<a className="more-link pull-right" href={game.more}>更多</a></h5>
     </div>
     <div className="game-list">
       <ul>
