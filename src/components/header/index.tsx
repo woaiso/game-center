@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import './header.less';
 interface HeaderProps {
-  title: string
+  title?: string
 }
 
 export default class Header extends React.Component<HeaderProps, any>{
