@@ -14,7 +14,6 @@ export default class Games extends React.Component<any, any> {
         <Header />
         <Content>
           <Slider className="game-slider" />
-          {/*中间内容区*/}
           <Game game={gamelist[0]} />
         </Content>
       </Page>
