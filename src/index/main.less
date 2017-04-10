@@ -40,7 +40,7 @@
   z-index: 1;
   display: block;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   will-change: scroll-position;
 }
@@ -83,13 +83,12 @@
     border-bottom: none;
   }
   .more-link {
-    display: inline-block;
     font-size: 28px;
     color: #669FEC;
     text-decoration: none;
   }
   .title {
-    h5 {
+    span {
       flex: 1;
       line-height: 32px;
       text-align: left;
@@ -287,4 +286,45 @@
 
 .game-slider {
   height: 232px;
+}
+
+.hot-games {
+  display: flex;
+  padding-top: 36px;
+  .hot-game-item {
+    padding-top: 54px;
+    flex: 1;
+    text-align: center;
+    .icon {
+      display: inline-block;
+      width: 146px;
+      height: 146px;
+      border-radius: .2rem;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .name {
+      padding:20px 0 16px;
+      font-size: 28px;
+      color: #333;
+    }
+    .sub-text {
+      font-size: 24px;
+      color: #8E8E8E;
+    }
+    &:nth-child(1) {
+      padding-top: 0;
+      order: 2;
+      .icon {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    &:nth-child(2) {
+      order: 1
+    }
+    &:nth-child(3) {
+      order: 3
+    }
+  }
 }
