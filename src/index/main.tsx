@@ -46,7 +46,7 @@ const HotGameItem = ({ gameItem, key }) => (
 );
 
 export const HotGame = ({ game }) => (
-  <section className="g-item">
+  <section className="g-item hot-game-section">
     <div className="title">
       <span>{game.title}</span>
       <a className="more-link pull-right" href={game.more}>更多</a>
