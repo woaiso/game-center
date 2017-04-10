@@ -44,6 +44,27 @@ export const gamelist = [
   }
 ];
 
+export const hotGame = {
+  title: '火爆人气',
+  games: [
+    {
+      icon: require('./../images/game_01.png'),
+      text: '王者荣耀',
+      sub_text: '31万人在线'
+    },
+    {
+      icon: require('./../images/game_02.png'),
+      text: '屌丝买房计策',
+      sub_text: '31万人在线'
+    },
+    {
+      icon: require('./../images/game_03.png'),
+      text: '地牢战争',
+      sub_text: '31万人在线'
+    }
+  ]
+}
+
 export const timelines = [
   {
     date: {
