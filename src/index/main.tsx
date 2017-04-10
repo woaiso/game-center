@@ -19,15 +19,39 @@ const GameItem = ({ gameItem }) => (
   </li>
 );
 
+
+
 export const Game = ({ game }) => (
   <section className="g-item">
     <div className="title">
-      <h5>{game.title}<a className="more-link pull-right" href={game.more}>更多</a></h5>
+      <span>{game.title}</span>
+      <a className="more-link pull-right" href={game.more}>查看详情</a>
     </div>
     <div className="game-list">
       <ul>
         {game.games.map((item, index) => <GameItem gameItem={item} key={index} />)}
       </ul>
+    </div>
+  </section>
+);
+
+const HotGameItem = ({ gameItem, key }) => (
+  <div className={"hot-game-item"}>
+    <div className="icon" style={{ backgroundImage: 'url(' + gameItem.icon + ')' }} />
+    <div className="name">{gameItem.text}</div>
+    <div className="sub-text">{gameItem.sub_text}</div>
+    <Button>打开</Button>
+  </div>
+);
+
+export const HotGame = ({ game }) => (
+  <section className="g-item">
+    <div className="title">
+      <span>{game.title}</span>
+      <a className="more-link pull-right" href={game.more}>更多</a>
+    </div>
+    <div className="hot-games">
+      {game.games.map((item, index) => <HotGameItem gameItem={item} key={index} />)}
     </div>
   </section>
 );
