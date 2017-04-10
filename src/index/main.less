@@ -292,6 +292,7 @@
   display: flex;
   padding-top: 36px;
   .hot-game-item {
+    position: relative;
     padding-top: 54px;
     flex: 1;
     text-align: center;
@@ -304,7 +305,7 @@
       background-repeat: no-repeat;
     }
     .name {
-      padding:20px 0 16px;
+      padding: 20px 0 16px;
       font-size: 28px;
       color: #333;
     }
@@ -314,17 +315,34 @@
     }
     &:nth-child(1) {
       padding-top: 0;
-      order: 2;
+      order: -1;
       .icon {
         width: 200px;
         height: 200px;
       }
+      .badge {
+        width: 66px;
+        height: 91px;
+        background-image: url('../images/ranking_1.png');
+      }
     }
     &:nth-child(2) {
-      order: 1
+      order: -2;
+      .badge {
+        background-image: url('../images/ranking_2.png');
+      }
     }
-    &:nth-child(3) {
-      order: 3
+    .badge {
+      display: block;
+      width: 56px;
+      height: 79px;
+      background-image: url('../images/ranking_3.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 38px;
+      right: 28px;
+      z-index: 1;
     }
   }
 }

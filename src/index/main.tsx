@@ -37,6 +37,7 @@ export const Game = ({ game }) => (
 
 const HotGameItem = ({ gameItem, key }) => (
   <div className={"hot-game-item"}>
+    <span className="badge" />
     <div className="icon" style={{ backgroundImage: 'url(' + gameItem.icon + ')' }} />
     <div className="name">{gameItem.text}</div>
     <div className="sub-text">{gameItem.sub_text}</div>
