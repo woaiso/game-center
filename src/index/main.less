@@ -360,3 +360,63 @@
     }
   }
 }
+
+.game-list-wrap {
+  background: #FFF;
+  .header-wrap {
+    display: flex;
+    padding: 40px 20px 0;
+    .title {
+      flex: 1;
+      font-size: 32px;
+      color: #333;
+    }
+    .more-link {
+      font-size: 28px;
+      line-height: 32px;
+      color: #669FEC;
+      text-decoration: none;
+    }
+  }
+}
+
+.game-list-item {
+  display: flex;
+  padding: 40px 20px 30px;
+  &.with-bottom-line {
+    border-bottom: 1px solid #E4E4E4;
+  }
+  .list-item-content {
+    flex: 1;
+    padding: 0 20px;
+    .title {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 18px;
+    }
+    .group-badge {
+      margin-bottom: 18px;
+    }
+    .sub-text {
+      font-size: 24px;
+      color: #8E8E8E;
+    }
+  }
+  .list-item-right {
+    display: flex;
+    align-items: center;
+    .button {
+      width: 114px;
+      height: 62px;
+      font-size: 32px;
+      line-height: 62px;
+    }
+  }
+}
+
+.game-icon {
+  display: inline-block;
+  width: 146px;
+  height: 146px;
+  border-radius: 20px;
+}
