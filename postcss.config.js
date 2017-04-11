@@ -32,7 +32,11 @@ module.exports = {
         'padding-top',
         'padding-right',
         'padding-bottom',
-        'border-radius'
+        'border-radius',
+        'top',
+        'right',
+        'bottom',
+        'left'
       ],
       selectorBlackList: [],
       replace: true,
