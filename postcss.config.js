@@ -36,7 +36,9 @@ module.exports = {
         'top',
         'right',
         'bottom',
-        'left'
+        'left',
+        'border-width',
+        'border-bottom-width'
       ],
       selectorBlackList: [],
       replace: true,
