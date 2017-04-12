@@ -6,8 +6,8 @@ export const Page = (props) => (
 
 export const Content = (props) => (
   <div className="content">
-    <div className="fixed-content" />
-    <div className="scroll-content">
+    <div className={"fixed-content" + (props.withTab ? ' with-tab' : '')} />
+    <div className={"scroll-content" + (props.withTab ? ' with-tab' : '')}>
       {props.children}
     </div>
   </div>
