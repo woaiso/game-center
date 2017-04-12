@@ -1,0 +1,29 @@
+@import './../style/variable.less';
+.nav-tab {
+  width: 100%;
+  display: flex;
+  background: #FFF;
+  position: absolute;
+  z-index: 1;
+  &.has-header {
+    margin-top: 88px;
+  }
+}
+
+.tab-item {
+  height: 82px;
+  line-height: 82px;
+  flex: 1;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  font-size: 32px;
+  color: @font-color;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  &.current {
+    border-bottom-color: @primary;
+    color: @primary;
+  }
+}
