@@ -38,7 +38,9 @@ module.exports = {
         'bottom',
         'left',
         'border-width',
-        'border-bottom-width'
+        'border-bottom-width',
+        'background-size',
+        'background-position'
       ],
       selectorBlackList: [],
       replace: true,
