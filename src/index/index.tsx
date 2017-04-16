@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { renderToStaticMarkup } from 'react-dom/server'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './respones';
 import './../components/style/index.less';
@@ -22,5 +23,8 @@ const BasicRouter = () => (
     </div>
   </Router>
 );
+
+//.
+console.log(renderToStaticMarkup(<Main />));
 
 ReactDOM.render(<BasicRouter />, document.getElementById('root'));
