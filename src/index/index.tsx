@@ -8,6 +8,8 @@ import './main.less';
 import Main from './main';
 import MyGameTemp from './my-game-temp';
 import Games from './games';
+import Top from './top';
+import Detail from './detail';
 
 const BasicRouter = () => (
   <Router>
@@ -15,6 +17,8 @@ const BasicRouter = () => (
       <Route exact={true} path="/" component={Main} />
       <Route path="/my-game-temp" component={MyGameTemp} />
       <Route path="/games" component={Games} />
+      <Route path="/top" component={Top} />
+      <Route path="/detail" component={Detail} />
     </div>
   </Router>
 );
