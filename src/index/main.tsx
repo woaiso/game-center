@@ -25,7 +25,7 @@ export const Game = ({ game }) => (
   <section className="g-item">
     <div className="title">
       <span>{game.title}</span>
-      <a className="more-link pull-right" href={game.more}>查看详情</a>
+      {game.more ? <a className="more-link pull-right" href={game.more}>查看详情</a> : null}
     </div>
     <div className="game-list">
       <ul>
