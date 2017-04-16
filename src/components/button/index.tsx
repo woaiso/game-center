@@ -11,19 +11,20 @@ interface ButtonProps {
 export default class Button extends React.Component<ButtonProps, any>{
   render() {
     let { children, className = '', type = "default", outline = false, size } = this.props;
+    let configClassName = '';
     if (type === 'primary') {
-      className += ' button-primary'
+      configClassName += ' button-primary';
     }
     if (outline) {
-      className += ' button-outline';
+      configClassName += ' button-outline';
     }
     if (size) {
-      className += ' button-' + size
+      configClassName += ' button-' + size;
     } else {
-      className += ' button-default';
+      configClassName += ' button-default';
     }
     return (
-      <button type="button" className={className + ' button'}>{children}</button>
+      <button type="button" className={className + configClassName + ' button'}>{children}</button>
     );
   }
 }
