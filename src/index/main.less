@@ -377,6 +377,18 @@
   }
 }
 
+.group-badge {
+  margin-bottom: 18px;
+  .badge-text {
+    font-size: 24px;
+    color: #8E8E8E;
+    vertical-align: -webkit-baseline-middle;
+  }
+  .button {
+    margin-right: 10px;
+  }
+}
+
 .game-list-item {
   display: flex;
   padding: 40px 20px 30px;
@@ -390,17 +402,6 @@
       font-size: 36px;
       color: #333;
       margin-bottom: 18px;
-    }
-    .group-badge {
-      margin-bottom: 18px;
-      .badge-text {
-        font-size: 24px;
-        color: #8E8E8E;
-        vertical-align: -webkit-baseline-middle;
-      }
-      .button {
-        margin-right: 10px;
-      }
     }
     .sub-text {
       font-size: 24px;
@@ -424,4 +425,270 @@
   width: 146px;
   height: 146px;
   border-radius: 20px;
+}
+
+
+/**新游戏榜 tab***/
+
+.top-tab {
+  display: flex;
+  padding: 50px 0 10px 24px;
+  margin-top: 20px;
+  background: #FFF;
+  .top-tab-item {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: #8E8E8E;
+    border-left: 2px solid #eAEAEA;
+    margin-left: 30px;
+    padding-left: 30px;
+    text-decoration: none;
+    &:nth-child(1) {
+      border-left: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .icon {
+      display: inline-block;
+      margin-right: 10px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      &.hot {
+        width: 22px;
+        height: 28px;
+        background-image: url('./../images/hot_d.png');
+      }
+      &.new {
+        width: 28px;
+        height: 28px;
+        background-image: url('./../images/new_d.png');
+      }
+    }
+    &.current {
+      color: @primary;
+      .hot {
+        background-image: url('./../images/hot_p.png');
+      }
+      .new {
+        background-image: url('./../images/new_p.png');
+      }
+    }
+  }
+}
+
+.top-content {
+  background: #FFF;
+  .top-item {
+    display: flex;
+    align-items: center;
+    .game-list-item {
+      flex: 1;
+    }
+    .top-number {
+      width: 56px;
+      height: 78px;
+      line-height: 78px;
+      margin: 0 36px;
+      font-size: 32px;
+      text-align: center;
+      color: #333;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    &:nth-child(1) {
+      .top-number {
+        background-image: url("./../images/ranking_1.png");
+      }
+    }
+    &:nth-child(2) {
+      .top-number {
+        background-image: url("./../images/ranking_2.png");
+      }
+    }
+    &:nth-child(3) {
+      .top-number {
+        background-image: url("./../images/ranking_3.png");
+      }
+    }
+  }
+}
+
+
+/***详情页*/
+
+.detail-content {
+  padding-bottom: 80px;
+  background: #FFF;
+}
+
+.video-player {
+  width: 100%;
+  height: 422px;
+  overflow: hidden;
+  position: relative;
+  .poster {
+    width: 100%;
+    height: 422px;
+    position: absolute;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .play-button {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -55px;
+    margin-left: -55px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("./../images/player_video_play.png");
+    z-index: 2;
+  }
+  .play-overlay {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 144px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("./../images/player_overlay.png");
+  }
+}
+
+.detail-info {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #E4E4E4;
+  .text-info {
+    flex: 1;
+    .title {
+      padding: 40px 0 30px;
+      font-size: 42px;
+      color: #333;
+    }
+    .group-badge {
+      margin: 34px 0 30px;
+    }
+    .sub-title {
+      margin-bottom: 40px;
+      font-size: 26px;
+      color: #8E8E8E;
+    }
+  }
+  .go-play-button {
+    &.button {
+      width: 142px;
+      height: 72px;
+      font-size: 36px;
+      color: #FFF;
+      border: none;
+    }
+  }
+}
+
+.detail-swiper {
+  border-bottom: 1px solid #E4E4E4;
+  .swiper-title {
+    padding: 0 20px;
+    margin: 40px 0;
+    font-size: 32px;
+    color: #333;
+  }
+  .swiper-images {
+    display: flex;
+    height: 366px;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    overflow: auto;
+    img {
+      height: 100%;
+      margin-right: 24px;
+    }
+  }
+}
+
+.detail-summary {
+  padding: 0 20px 40px;
+  .summary-title {
+    margin: 40px 0;
+    font-size: 32px;
+    color: #333;
+  }
+  .summary-content {
+    font-size: 30px;
+    color: #8E8E8E;
+    line-height: 48px;
+  }
+}
+
+.download-link {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  position: fixed;
+  bottom: 0;
+  background: @primary;
+  font-size: 36px;
+  color: #FFF;
+  text-align: center;
+}
+
+
+/***星星评分**/
+
+.stars {
+  display: inline-block;
+  .star {
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-right: 6px;
+    background-size: 271px 24px;
+    background-image: url('./../images/star.png');
+    background-repeat: no-repeat;
+    &.star-temp {
+      background-position: 0px 0;
+    }
+    &.star-1 {
+      background-position: -(24*1px) 0;
+    }
+    &.star-2 {
+      background-position: -49px 0;
+    }
+    &.star-3 {
+      background-position: -73px 0;
+    }
+    &.star-4 {
+      background-position: -99px 0;
+    }
+    &.star-5 {
+      background-position: -123px 0;
+    }
+    &.star-6 {
+      background-position: -148px 0;
+    }
+    &.star-7 {
+      background-position: -173px 0;
+    }
+    &.star-8 {
+      background-position: -196px 0;
+    }
+    &.star-9 {
+      background-position: -221px 0;
+    }
+    &.star-full {
+      background-position: -246px 0;
+    }
+  }
+  .number {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 30px;
+    color: @primary;
+  }
 }
