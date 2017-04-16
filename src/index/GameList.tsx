@@ -5,19 +5,28 @@ const exampleIcon = require('./../images/game_01.png');
  * 游戏列表
  */
 
-const Star = () => (
-  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 12.705 512 486.59" style={{ marginRight: '0px' }}>
-    <defs>
-      <linearGradient id="demo-onset_grad4" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="70%" stopColor="#669FEC" />
-        <stop offset="0%" stopColor="white" />
-      </linearGradient>
-    </defs>
-    <polygon style={{ fill: "url(#demo-onset_grad4)", stroke: "black", strokeWidth: "2px" }} points="256.814,12.705 317.205,198.566 512.631,198.566 354.529,313.435 414.918,499.295 256.814,384.427 98.713,499.295 159.102,313.435 1,198.566 196.426,198.566 " />
-  </svg>
-);
+export class Star extends React.Component<any, any>{
+  render() {
+    return (
+      <div className="stars">
+        <span className="star star-temp"/>
+        <span className="star star-1"/>
+        <span className="star star-2"/>
+        <span className="star star-3"/>
+        <span className="star star-4"/>
+        <span className="star star-5"/>
+        <span className="star star-6"/>
+        <span className="star star-7"/>
+        <span className="star star-8"/>
+        <span className="star star-9"/>
+        <span className="star star-full"/>
+        <div className="number">8.6</div>
+      </div>
+    );
+  }
+}
 
-const GameItem = () => (
+export const GameItem = () => (
   <div className="game-list-item with-bottom-line">
     <div>
       <img className="game-icon" src={exampleIcon} />
@@ -28,13 +37,13 @@ const GameItem = () => (
         <Button type="primary" outline={true}>策略类</Button>
         <Button type="primary" outline={true}>3D</Button>
         <Button type="primary" outline={true}>情怀</Button>
-        <span className="badge-text">134万人在线玩</span>
+        {/*<span className="badge-text">134万人在线玩</span>*/}
       </div>
-      <div className="star">
+      {/*<div className="star">
         <Star />
         <Star />
         <Star />
-      </div>
+      </div>*/}
       <div className="sub-text">来战个痛快</div>
     </div>
     <div className="list-item-right">
