@@ -1,20 +1,28 @@
 import * as React from 'react';
 
-import './header.less';
 interface HeaderProps {
-  title?: string
+  title?: string,
+  tabs?: any[]
 }
 
 export default class Header extends React.Component<HeaderProps, any>{
   render() {
-    const { title } = this.props;
+    const { title, tabs } = this.props;
+    let headTabs;
+    if (tabs) {
+      headTabs = (
+        <div className="buttons-row">
+          {tabs.map((tab, index) => <a key={index} href={tab.href} className={"button tab-link" + (index === 0 ? ' active' : '')}>{tab.text}</a>)}
+        </div>
+      );
+    }
     return (
       <header className="header">
-        <div className="header-title-wrap">
-          {/*<div className="header-title">{title}</div>*/}
-          <div className="buttons-row">
-            <a href="#tab1" className="button tab-link active">手游</a>
-            <a href="#tab2" className="button tab-link">页游</a>
+        <div className="header-inner">
+          <a href="javascript:;" className="back-button" />
+          <div className="header-title-wrap">
+            {title ? <div className="header-title">{title}</div> : null}
+            {headTabs}
           </div>
         </div>
       </header>
