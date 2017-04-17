@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './button.less';
 
 interface ButtonProps {
   type?: 'primary' | 'default',
