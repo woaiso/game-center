@@ -35,7 +35,7 @@ export const Game = ({ game }) => (
   </section>
 );
 
-const HotGameItem = ({ gameItem, key }) => (
+const HotGameItem = ({ gameItem }) => (
   <div className={"hot-game-item"}>
     <span className="badge" />
     <div className="icon" style={{ backgroundImage: 'url(' + gameItem.icon + ')' }} />
@@ -88,7 +88,7 @@ export default class Main extends React.Component<any, any> {
               </div>
               {/*历程时间轴*/}
               <ul className="t-content">
-                {timelines.map((timeline, index) => (timeline as any).year ? <Year year={(timeline as any).year} /> : <TimeLine timeline={timeline} key={index} />)}
+                {timelines.map((timeline, index) => (timeline as any).year ? <Year key={index} year={(timeline as any).year} /> : <TimeLine timeline={timeline} key={index} />)}
               </ul>
             </div>
           </div>
