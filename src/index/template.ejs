@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta http-equiv="x-ua-compatible" content="ie=edge" />
-	<meta name="description" content="H5 游戏中心" />
-	<title>H5 游戏中心</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="description" content="H5 游戏中心" />
+  <title>H5 游戏中心</title>
+  <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/Swiper/3.4.2/css/swiper.min.css">
+  <script src="http://cdn.staticfile.org/zepto/1.2.0/zepto.min.js"></script>
+  <script src="http://cdn.staticfile.org/Swiper/3.4.2/js/swiper.min.js"></script>
+  <% for(var i=0; i<htmlWebpackPlugin.files.css.length; i++) {%>
+    <link rel="stylesheet" type="text/css" href="<%=htmlWebpackPlugin.files.css[i]%>">
+    <% } %>
 </head>
+
 <body>
-	<div class="container">
-		<div id="root"></div>
-	</div>
+
+  <div class="container">
+    <div id="root"></div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: '.swiper-pagination',
+      })
+    });
+  </script>
 </body>
+
 </html>
