@@ -49,7 +49,7 @@ export default class Detail extends React.Component<any, any> {
     }
     return (
       <Page>
-        <Header />
+        <Header title="详情页"/>
         <Content>
           <div className="detail-content">
             <Video />
