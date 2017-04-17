@@ -22,7 +22,7 @@ const babelLoader = `babel-loader?${JSON.stringify(babelConfig)}`;
  */
 const webpackEntry = {};
 entrys.forEach((entryName) => {
-  webpackEntry[entryName] = path.resolve(SOURCE_PATH, `${entryName}/index.tsx`);
+  webpackEntry[ entryName ] = path.resolve(SOURCE_PATH, `${entryName}/index.tsx`);
 });
 
 
@@ -31,14 +31,14 @@ const htmlPlugins = entrys.map((entryName) => {
     title: entryName,
     filename: `${entryName}.html`,
     template: path.join(SOURCE_PATH, `${entryName}/template.ejs`),
-    inject: 'body',
+    inject: IS_PRODOCTION ? false : 'body',
     minify: {}, //https://github.com/kangax/html-minifier#options-quick-reference
     hash: true, //if true then append a unique webpack compilation hash to all included scripts and CSS files. This is useful for cache busting.
     cache: true, //true (default) try to emit the file only if it was changed.
     showErrors: true, // if true (default) errors details will be written into the HTML page.
-    chunks: ['vendor', entryName],
+    chunks: [ 'vendor', entryName ],
     chunksSortMode: 'auto', // Allows to control how chunks should be sorted before they are included to the html. Allowed values: 'none' | 'auto' | 'dependency' | {function} - default: 'auto'
-    excludeChunks: ['unit-test'],
+    excludeChunks: [ 'unit-test' ],
     xhtml: false //If true render the link tags as self-closing, XHTML compliant. Default is false
   });
 });
@@ -46,7 +46,7 @@ const htmlPlugins = entrys.map((entryName) => {
 //生产环境默认关闭SourceMap
 const sourceMapEnable = IS_PRODOCTION ? false : true
 
-webpackEntry['vendor'] = ['react', 'react-dom'];
+webpackEntry[ 'vendor' ] = [ 'react', 'react-dom' ];
 
 export class WebpackConfig {
   cache = true
@@ -61,8 +61,8 @@ export class WebpackConfig {
   }
   resolve = {
     //定义从package.json 的什么字段上去读入口文件
-    mainFields: ['jsnext:main', "browser", "module", "main"],
-    extensions: ['.webpack.js', '.web.js', '.js', '.jsx', '.ts', '.tsx'],
+    mainFields: [ 'jsnext:main', "browser", "module", "main" ],
+    extensions: [ '.webpack.js', '.web.js', '.js', '.jsx', '.ts', '.tsx' ],
     modules: [
       path.join(CWD, 'src'),
       CWD_NODE_MODULES,
@@ -82,7 +82,7 @@ export class WebpackConfig {
     rules: [
       {
         test: /\.(tsx|ts)?$/,
-        loader: IS_PRODOCTION ? [babelLoader, 'ts-loader?logLevel=error'] : ['react-hot-loader/webpack', babelLoader, 'ts-loader?logLevel=error']
+        loader: IS_PRODOCTION ? [ babelLoader, 'ts-loader?logLevel=error' ] : [ 'react-hot-loader/webpack', babelLoader, 'ts-loader?logLevel=error' ]
       },
       {
         exclude: /(node_modules|bower_components)/,
@@ -98,12 +98,12 @@ export class WebpackConfig {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [{
+          use: [ {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
               sourceMap: sourceMapEnable,
-              minimize: true
+              minimize: false
             }
           }, {
             loader: 'postcss-loader'
@@ -121,7 +121,7 @@ export class WebpackConfig {
               options: {
                 sourceMap: sourceMapEnable,
                 importLoaders: 1,
-                minimize: true
+                minimize: false
               }
             },
             {
@@ -171,7 +171,7 @@ export class WebpackConfig {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'images/[hash:16].[ext]'
+          name: '/images/[name].[ext]'
         }
       }
     ]
