@@ -17,12 +17,20 @@ interface SliderProps {
   className?: string
 }
 
+const slideImg = require('./../images/slide.png');
+
 export const Slider = ({ className = '' }) => (
   <div className={`swiper-container ${className}`}>
     <div className="swiper-wrapper">
-      <div className="swiper-slide">Slide 1</div>
-      <div className="swiper-slide">Slide 2</div>
-      <div className="swiper-slide">Slide 3</div>
+      <div className="swiper-slide">
+        <img src={slideImg} />
+      </div>
+      <div className="swiper-slide">
+        <img src={slideImg} />
+      </div>
+      <div className="swiper-slide">
+        <img src={slideImg} />
+      </div>
     </div>
     <div className="swiper-pagination" />
   </div>
