@@ -283,6 +283,21 @@
 
 .game-slider {
   height: 232px;
+  .swiper-slide {
+    img {
+      width: 100%;
+    }
+  }
+  .swiper-pagination {
+    text-align: right;
+  }
+  .swiper-pagination-bullet {
+    background: #FFF;
+    opacity: .8;
+  }
+  .swiper-pagination-bullet-active {
+    background: @primary;
+  }
 }
 
 .hot-game-section {
@@ -354,6 +369,7 @@
       width: 114px;
       height: 62px;
       font-size: 32px;
+      border-radius: 10px;
     }
   }
 }
@@ -416,6 +432,7 @@
       height: 62px;
       font-size: 32px;
       line-height: 62px;
+      border-radius: 10px;
     }
   }
 }
@@ -425,6 +442,47 @@
   width: 146px;
   height: 146px;
   border-radius: 20px;
+}
+
+
+/**数据加载中**/
+
+.data-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  font-size: 30px;
+  color: #8E8E8E;
+  text-align: center;
+  background: #FFF;
+  .loading-spiner {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('./../images/loading.png');
+    animation: loading 1s infinite linear;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-more-data {
+  padding: 30px 0;
+  font-size: 30px;
+  color: #8E8E8E;
+  text-align: center;
+  background: #f2f2f2;
 }
 
 
