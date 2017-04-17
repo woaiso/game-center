@@ -11,15 +11,32 @@ import { gamelist, hotGame } from './data';
 
 export default class Games extends React.Component<any, any> {
   render() {
+    const tabs = [
+      {
+        text: '手游',
+        href: 'javascript:;'
+      },
+      {
+        text: '页游',
+        href: 'javascript:;'
+      }
+    ]
     return (
       <Page>
-        <Header />
+        <Header tabs={tabs} />
         <Tab hasHeader={true} />
         <Content withTab={true}>
           <Slider className="game-slider" />
-          <Game game={gamelist[0]} />
+          <Game game={gamelist[ 0 ]} />
           <HotGame game={hotGame} />
           <GameList />
+          <div className="data-loading">
+            <span className="loading-spiner"/>
+            加载中
+          </div>
+          <div className="no-more-data">
+            没有数据了
+          </div>
         </Content>
       </Page>
     );
