@@ -1,5 +1,9 @@
 {
+  "include": [
+    "./src/**/*"
+  ],
   "compilerOptions": {
+    "outDir": "lib",
     "strictNullChecks": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
