@@ -4,11 +4,17 @@
   top: 0;
   left: 0;
   z-index: 10;
-  display: block;
   width: 100%;
   height: 88px;
   border-bottom: 1px solid @header-border-color;
   background: #FFF;
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
   .button {
     height: 60px;
     font-size: 30px;
@@ -39,9 +45,20 @@
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
+  .back-button {
+    margin-left: 20px;
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    background-image: url('./../../images/back.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 .header-title-wrap {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   -webkit-transform: translateZ(0);
