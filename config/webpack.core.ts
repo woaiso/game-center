@@ -56,8 +56,7 @@ export class WebpackConfig {
     path: BUILD,
     filename: '[name].js',
     sourceMapFilename: '[file].map',
-    chunkFilename: '[id].chunk.js',
-    publicPath: ''
+    chunkFilename: '[id].chunk.js'
   }
   resolve = {
     //定义从package.json 的什么字段上去读入口文件
