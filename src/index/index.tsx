@@ -6,16 +6,20 @@ import './../../respones.js';
 import './../components/style/index.less';
 import './main.less';
 
-import Main from './main';
+import MyGame from './my-game';
 import MyGameTemp from './my-game-temp';
 import Games from './games';
+import GamesLibrary from './games-library';
+import GamesTemp from './games-temp';
 import Top from './top';
 import Detail from './detail';
+import Hot from './hot';
+import PuzzleGame from './puzzle-game';
 
 const routers = [
   {
-    path: '/main',
-    component: Main
+    path: '/my-game',
+    component: MyGame
   }, {
     path: '/my-game-temp',
     component: MyGameTemp
@@ -23,11 +27,23 @@ const routers = [
     path: '/games',
     component: Games
   }, {
+    path: '/games-library',
+    component: GamesLibrary
+  }, {
+    path: '/games-temp',
+    component: GamesTemp
+  }, {
     path: '/top',
     component: Top
   }, {
     path: '/detail',
     component: Detail
+  }, {
+    path: '/hot',
+    component: Hot
+  }, {
+    path: '/puzzle-game',
+    component: PuzzleGame
   }
 ];
 
