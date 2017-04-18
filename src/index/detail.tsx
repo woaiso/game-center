@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from './../components/header';
 import { Page, Content, Slider } from './container';
-import { Game, HotGame } from './main';
+import { Game, HotGame } from './my-game';
 import GameList from './GameList';
 import Tab from './../components/tab';
 import { gamelist, hotGame } from './data';
@@ -49,7 +49,7 @@ export default class Detail extends React.Component<any, any> {
     }
     return (
       <Page>
-        <Header title="详情页"/>
+        <Header title="详情页" />
         <Content>
           <div className="detail-content">
             <Video />
