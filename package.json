@@ -4,7 +4,7 @@
   "description": "game center",
   "main": "index.tsx",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.ts --progress",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.ts --progress --host 0.0.0.0",
     "build": "npm run build:webpack && npm run build:static",
     "build:static": "node server.js",
     "build:webpack": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.ts --progress",
