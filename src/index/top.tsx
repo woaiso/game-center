@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from './../components/header';
 import { Page, Content, Slider } from './container';
-import { Game, HotGame } from './main';
+import { Game, HotGame } from './my-game';
 import GameList from './GameList';
 import Tab from './../components/tab';
 import { gamelist, hotGame } from './data';
