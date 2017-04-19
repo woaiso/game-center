@@ -1,7 +1,6 @@
 export const gamelist = [
   {
     title: '最近在玩',
-    more: 'http://game.qq.com',
     games: [
       {
         icon: require('./../images/game_01.png'),
