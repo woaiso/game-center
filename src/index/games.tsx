@@ -18,20 +18,20 @@ export default class Games extends React.Component<any, any> {
       },
       {
         text: '页游',
-        href: 'javascript:;'
+        href: 'javascript:;',
+        active: true
       }
     ]
     return (
       <Page>
         <Header tabs={tabs} />
-        <Tab hasHeader={true} />
-        <Content withTab={true}>
+        <Content>
           <Slider className="game-slider" />
-          <Game game={gamelist[ 0 ]} />
+          <Game game={gamelist[0]} />
           <HotGame game={hotGame} />
           <GameList />
           <div className="data-loading">
-            <span className="loading-spiner"/>
+            <span className="loading-spiner" />
             加载中
           </div>
           <div className="no-more-data">
