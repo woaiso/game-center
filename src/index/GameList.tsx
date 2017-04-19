@@ -7,19 +7,20 @@ const exampleIcon = require('./../images/game_01.png');
 
 export class Star extends React.Component<any, any>{
   render() {
+    const { className } = this.props;
     return (
-      <div className="stars">
-        <span className="star star-temp"/>
-        <span className="star star-1"/>
-        <span className="star star-2"/>
-        <span className="star star-3"/>
-        <span className="star star-4"/>
-        <span className="star star-5"/>
-        <span className="star star-6"/>
-        <span className="star star-7"/>
-        <span className="star star-8"/>
-        <span className="star star-9"/>
-        <span className="star star-full"/>
+      <div className={"stars" + (className ? ' ' + className : '')}>
+        <span className="star star-temp" />
+        <span className="star star-1" />
+        <span className="star star-2" />
+        <span className="star star-3" />
+        <span className="star star-4" />
+        <span className="star star-5" />
+        <span className="star star-6" />
+        <span className="star star-7" />
+        <span className="star star-8" />
+        <span className="star star-9" />
+        <span className="star star-full" />
         <div className="number">8.6</div>
       </div>
     );
@@ -36,8 +37,7 @@ export const GameItem = () => (
       <div className="group-badge">
         <Button type="primary" outline={true}>策略类</Button>
         <Button type="primary" outline={true}>3D</Button>
-        <Button type="primary" outline={true}>情怀</Button>
-        {/*<span className="badge-text">134万人在线玩</span>*/}
+        <span className="badge-text">134万人在线玩</span>
       </div>
       {/*<div className="star">
         <Star />
