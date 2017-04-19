@@ -13,7 +13,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: #f2f2f2;
+    background: @background;
     &.white {
       background: #FFF;
     }
@@ -73,7 +73,7 @@
 }
 
 .g-item {
-  padding: 40px 20px;
+  padding: 38px 20px;
   background: #FFF;
   border-bottom: 1px solid #E4E4E4;
   &:last-child {
@@ -90,6 +90,7 @@
       line-height: 32px;
       text-align: left;
       font-size: 32px;
+      font-weight: bold;
     }
   }
   .game-list {
@@ -121,8 +122,8 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        line-height: 24px;
-        max-height: 46px;
+        line-height: 30px;
+        max-height: 56px;
       }
       &:last-child {
         margin-right: 0;
@@ -150,12 +151,12 @@
       border-bottom: 1px solid #e4e4e4;
       .tab {
         flex: 1;
-        height: 90px;
-        line-height: 90px;
+        height: 92px;
+        line-height: 92px;
         font-size: 32px;
         text-align: center;
         border-bottom: 4px solid transparent;
-        color: #8E8E8E;
+        color: @one-gray;
         &.current {
           color: @primary;
           border-bottom-color: @primary;
@@ -165,12 +166,13 @@
   }
   /***时间轴****/
   .t-content {
+    padding-bottom: 30px;
     .t-item {
       display: flex;
       overflow: hidden;
       align-items: flex-start;
       justify-content: space-between;
-      padding: 32px 24px;
+      padding: 30px 24px 0;
       .date {
         padding-right: 24px;
         text-align: center;
@@ -195,20 +197,21 @@
         border: 1px solid #E4E4E4;
         background: #FFF;
         .title {
-          margin-bottom: 30px;
+          margin-bottom: 18px;
           line-height: 28px;
           font-size: 28px;
           color: @font-color;
           .sub {
             float: right;
             font-size: 24px;
-            color: #8E8E8E;
+            color: @one-gray;
           }
         }
       }
     }
     .year {
       padding: 0 24px;
+      margin-top: 30px;
       font-size: 36px;
       font-weight: bold;
       color: @font-color;
@@ -225,7 +228,7 @@
     height: 146px;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-right: 20px;
+    margin-right: 12px;
     float: left;
   }
   .detail {
@@ -246,7 +249,7 @@
       text-transform: none;
       white-space: nowrap;
       font-size: 24px;
-      color: #8E8E8E;
+      color: @one-gray;
     }
   }
 }
@@ -257,17 +260,21 @@
 .no-data-wrap {
   width: 100%;
   text-align: center;
-  background: #f2f2f2;
+  background: @background;
   padding-top: .2rem;
   .box {
     width: 100%;
-    margin-top: -167px;
+    margin-top: -100px;
     position: absolute;
     top: 50%;
     .text {
       font-size: 30px;
       color: #8E8E8E;
       margin: 38px 0 40px;
+    }
+    img {
+      width: 176px;
+      height: 178px;
     }
   }
 }
@@ -383,6 +390,7 @@
       flex: 1;
       font-size: 32px;
       color: #333;
+      font-weight: bold;
     }
     .more-link {
       font-size: 28px;
@@ -394,10 +402,9 @@
 }
 
 .group-badge {
-  margin-bottom: 18px;
   .badge-text {
     font-size: 24px;
-    color: #8E8E8E;
+    color: @primary;
     vertical-align: -webkit-baseline-middle;
   }
   .button {
@@ -413,15 +420,32 @@
   }
   .list-item-content {
     flex: 1;
-    padding: 0 20px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     .title {
       font-size: 36px;
       color: #333;
       margin-bottom: 18px;
+      .hot-badge {
+        position: relative;
+        top: -4px;
+        margin-left: 4px;
+        display: inline-block;
+        width: 38px;
+        height: 26px;
+        background-color: #FFF;
+        background-image: url('./../images/hot_badge.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
     }
     .sub-text {
       font-size: 24px;
-      color: #8E8E8E;
+      color: @one-gray;
+      margin-top: 16px;
     }
   }
   .list-item-right {
@@ -488,7 +512,7 @@
   font-size: 30px;
   color: #8E8E8E;
   text-align: center;
-  background: #f2f2f2;
+  background: @background;
 }
 
 
@@ -548,12 +572,14 @@
     align-items: center;
     .game-list-item {
       flex: 1;
+      padding-left: 0;
+      padding-right: 0;
     }
     .top-number {
       width: 56px;
       height: 78px;
       line-height: 78px;
-      margin: 0 36px;
+      margin: 0 32px;
       font-size: 32px;
       text-align: center;
       color: #333;
@@ -634,6 +660,7 @@
       padding: 40px 0 30px;
       font-size: 42px;
       color: #333;
+      font-weight: bold;
     }
     .group-badge {
       margin: 34px 0 30px;
@@ -662,6 +689,7 @@
     margin: 40px 0;
     font-size: 32px;
     color: #333;
+    font-weight: bold;
   }
   .swiper-images {
     display: flex;
@@ -682,10 +710,11 @@
     margin: 40px 0;
     font-size: 32px;
     color: #333;
+    font-weight: bold;
   }
   .summary-content {
     font-size: 30px;
-    color: #8E8E8E;
+    color: #333;
     line-height: 48px;
   }
 }
@@ -707,6 +736,8 @@
 
 .stars {
   display: inline-block;
+  height: 24px;
+  line-height: 24px;
   .star {
     display: inline-block;
     width: 24px;
@@ -748,11 +779,17 @@
     &.star-full {
       background-position: -246px 0;
     }
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
   }
   .number {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
     font-size: 30px;
     color: @primary;
+  }
+  &.pull-bottom {
+    margin-bottom: 18px;
   }
 }
