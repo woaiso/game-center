@@ -65,7 +65,6 @@ export default class Detail extends React.Component<any, any> {
                   <Button type="primary" outline={true}>策略类</Button>
                   <Button type="primary" outline={true}>3D</Button>
                   <Button type="primary" outline={true}>情怀</Button>
-                  <span className="badge-text">134万人在线玩</span>
                 </div>
                 <div className="sub-title">
                   厂商：腾讯游戏
