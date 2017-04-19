@@ -25,7 +25,7 @@ export default () => (
           <div className="box">
             <img src={noData} className="no-data" />
             <div className="text">没有最近的游戏记录哟 </div>
-            <Button size="large">立刻去玩</Button>
+            <Button size="large" className="full-button">立刻去玩</Button>
           </div>
         </div>
       </div>
