@@ -12,7 +12,7 @@ export default class Header extends React.Component<HeaderProps, any>{
     if (tabs) {
       headTabs = (
         <div className="buttons-row">
-          {tabs.map((tab, index) => <a key={index} href={tab.href} className={"button tab-link" + (index === 0 ? ' active' : '')}>{tab.text}</a>)}
+          {tabs.map((tab, index) => <a key={index} href={tab.href} className={"button tab-link" + (tab.active ? ' active' : '')}>{tab.text}</a>)}
         </div>
       );
     }
