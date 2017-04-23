@@ -13,22 +13,27 @@ import { Star } from './GameList';
 import Button from './../components/button';
 const exampleIcon = require('./../images/game_02.png');
 
-export const GameItem = ({ hot = false }) => (
-  <div className="game-list-item with-bottom-line">
-    <div>
-      <img className="game-icon" src={exampleIcon} />
-    </div>
-    <div className="list-item-content">
-      <div className="title">光明大陆 {hot ? <span className="hot-badge" /> : null} </div>
-      <Star className="pull-bottom" />
-      <div className="group-badge">
-        <Button type="primary" outline={true}>策略类</Button>
-        <Button type="primary" outline={true}>3D</Button>
-        <Button type="primary" outline={true}>情怀</Button>
-      </div>
-    </div>
-  </div >
-);
+export class GameItem extends React.Component<any, any>{
+  render() {
+    const game = gamelist[0].games[Math.floor(Math.random() * gamelist[0].games.length)]
+    return (
+      <div className="game-list-item with-bottom-line">
+        <div>
+          <img className="game-icon" src={game.icon} />
+        </div>
+        <div className="list-item-content">
+          <div className="title">{game.text} {(game as any).hot ? <span className="hot-badge" /> : null} </div>
+          <Star className="pull-bottom" />
+          <div className="group-badge">
+            <Button type="primary" outline={true}>策略类</Button>
+            <Button type="primary" outline={true}>3D</Button>
+            <Button type="primary" outline={true}>情怀</Button>
+          </div>
+        </div>
+      </div >
+    );
+  }
+}
 
 
 export default class Games extends React.Component<any, any> {
@@ -46,7 +51,7 @@ export default class Games extends React.Component<any, any> {
     ]
     return (
       <Page>
-        <Header tabs={tabs}/>
+        <Header tabs={tabs} />
         <Tab hasHeader={true} />
         <Content withTab={true}>
           <div className="top-tab">
