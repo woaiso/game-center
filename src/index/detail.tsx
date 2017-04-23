@@ -19,7 +19,7 @@ const Video = () => (
     <div className="poster" style={{ backgroundImage: 'url(' + poster + ')' }} />
     <div className="play-button" />
     <div className="play-overlay" />
-    <video />
+    <video width="1" height="1" />
   </div>
 );
 
@@ -44,20 +44,28 @@ export default class Detail extends React.Component<any, any> {
         {
           icon: require('./../images/game_04.png'),
           text: '地牢战争'
+        },
+        {
+          icon: require('./../images/game_03.png'),
+          text: '冒险村物语'
+        },
+        {
+          icon: require('./../images/game_04.png'),
+          text: '地牢战争'
         }
       ]
     }
     return (
       <Page>
         <Header title="详情页" />
-        <Content>
+        <Content withBottom={true}>
           <div className="detail-content">
             <Video />
             <div className="detail-info">
               <div className="text-info">
                 <div className="title">
                   洋果子店ROSE
-            </div>
+                </div>
                 <div className="stars">
                   <Star />
                 </div>
@@ -76,11 +84,13 @@ export default class Detail extends React.Component<any, any> {
               <div className="swiper-title">
                 游戏截图
             </div>
-              <div className="swiper-images">
-                <img src={require('./../images/swiper_1.png')} />
-                <img src={require('./../images/swiper_2.png')} />
-                <img src={require('./../images/swiper_3.png')} />
-                <img src={require('./../images/swiper_4.png')} />
+              <div>
+                <ul className="swiper-images">
+                  <li><img src={require('./../images/swiper_1.png')} /></li>
+                  <li><img src={require('./../images/swiper_2.png')} /></li>
+                  <li><img src={require('./../images/swiper_3.png')} /></li>
+                  <li><img src={require('./../images/swiper_2.png')} /></li>
+                </ul>
               </div>
             </div>
             <div className="detail-summary">
@@ -107,10 +117,10 @@ export default class Detail extends React.Component<any, any> {
               <Game game={game} />
             </div>
           </div>
-          <a className="download-link">
-            下载
-          </a>
         </Content>
+        <a className="download-link">
+          下载
+          </a>
       </Page>
     );
   }
