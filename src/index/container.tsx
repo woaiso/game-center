@@ -5,7 +5,7 @@ export const Page = (props) => (
 );
 
 export const Content = (props) => (
-  <div className="content">
+  <div className={"content" + (props.withBottom ? ' with-bottom' : '')}>
     <div className={"fixed-content" + (props.withTab ? ' with-tab' : '')} />
     <div className={"scroll-content" + (props.withTab ? ' with-tab' : '')}>
       {props.children}
