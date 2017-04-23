@@ -28,9 +28,11 @@ export const Game = ({ game }) => (
       {game.more ? <a className="more-link pull-right" href={game.more}>查看详情</a> : null}
     </div>
     <div className="game-list">
-      <ul>
-        {game.games.map((item, index) => <GameItem gameItem={item} key={index} />)}
-      </ul>
+      <div className="game-list-wrap">
+        <ul>
+          {game.games.map((item, index) => <GameItem gameItem={item} key={index} />)}
+        </ul>
+      </div>
     </div>
   </section>
 );
