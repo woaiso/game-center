@@ -15,7 +15,8 @@ const tabs = [
   },
   {
     text: '页游',
-    href: 'javascript:;'
+    href: 'javascript:;',
+    active: true
   }
 ]
 
