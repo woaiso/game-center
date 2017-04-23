@@ -4,7 +4,8 @@ export const gamelist = [
     games: [
       {
         icon: require('./../images/game_01.png'),
-        text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
+        text: '王者荣耀',
+        hot: true
       },
       {
         icon: require('./../images/game_02.png'),
@@ -16,7 +17,15 @@ export const gamelist = [
       },
       {
         icon: require('./../images/game_04.png'),
-        text: '地牢战争'
+        text: '王者荣耀',
+      },
+      {
+        icon: require('./../images/game_03.png'),
+        text: '冒险村物语'
+      },
+      {
+        icon: require('./../images/game_04.png'),
+        text: '屌丝买房计策',
       }
     ]
   },
@@ -24,20 +33,28 @@ export const gamelist = [
     title: '最近下载',
     games: [
       {
-        icon: require('./../images/game_01.png'),
-        text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
-      },
-      {
-        icon: require('./../images/game_02.png'),
-        text: '糖果苏打传奇'
+        icon: require('./../images/game_04.png'),
+        text: '地牢战争'
       },
       {
         icon: require('./../images/game_03.png'),
         text: '冒险村物语'
       },
       {
+        icon: require('./../images/game_02.png'),
+        text: '糖果苏打传奇'
+      },
+      {
         icon: require('./../images/game_04.png'),
         text: '地牢战争'
+      },
+      {
+        icon: require('./../images/game_01.png'),
+        text: '我的猫呢-喵魂 设计 柠檬酱测试文本'
+      },
+      {
+        icon: require('./../images/game_03.png'),
+        text: '冒险村物语'
       }
     ]
   }
