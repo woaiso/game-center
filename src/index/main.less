@@ -28,6 +28,9 @@
   left: 0;
   display: block;
   margin-top: 88px;
+  &.with-bottom {
+    bottom: 80px;
+  }
   &.with-tab {
     margin-top: 170px;
   }
@@ -73,18 +76,21 @@
 }
 
 .g-item {
-  padding: 38px 20px;
+  padding: 38px 0;
   background: #FFF;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E8E8E8;
   &:last-child {
     border-bottom: none;
   }
   .more-link {
+    margin-right: 20px;
     font-size: 28px;
     color: @primary;
     text-decoration: none;
   }
   .title {
+    margin-left: 20px;
+    margin-right: 20px;
     span {
       flex: 1;
       line-height: 32px;
@@ -95,13 +101,17 @@
   }
   .game-list {
     padding-top: 40px;
+    .game-list-wrap {
+      margin: 0 0 0 20px;
+    }
     ul {
       display: flex;
+      overflow: auto;
     }
     .item {
       /**单个游戏图标大小**/
       width: 146px;
-      margin-right: 40px;
+      margin-right: 30px;
       span {
         display: block;
         width: 100%;
@@ -125,9 +135,6 @@
         line-height: 30px;
         max-height: 56px;
       }
-      &:last-child {
-        margin-right: 0;
-      }
     }
   }
 }
@@ -147,8 +154,8 @@
     }
     .tabs {
       display: flex;
-      border-top: 1px solid #E4E4E4;
-      border-bottom: 1px solid #e4e4e4;
+      border-top: 1px solid #E8E8E8;
+      border-bottom: 1px solid #E8E8E8;
       .tab {
         flex: 1;
         height: 92px;
@@ -194,9 +201,9 @@
       .card {
         flex: 1;
         padding: 30px;
-        border: 1px solid #E4E4E4;
+        border: 1px solid #E8E8E8;
         background: #FFF;
-        .title {
+        >.title {
           margin-bottom: 18px;
           line-height: 28px;
           font-size: 28px;
@@ -232,11 +239,15 @@
     float: left;
   }
   .detail {
+    max-width: 432px;
     height: 146px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     .title {
+      font-size: 36px;
+      line-height: 36px;
+      margin-bottom: 18px;
       overflow: hidden;
       text-overflow: ellipsis;
       text-transform: none;
@@ -416,7 +427,7 @@
   display: flex;
   padding: 40px 20px 30px;
   &.with-bottom-line {
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E8E8E8;
   }
   .list-item-content {
     flex: 1;
@@ -653,7 +664,7 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E8E8E8;
   .text-info {
     flex: 1;
     .title {
@@ -683,7 +694,7 @@
 }
 
 .detail-swiper {
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E8E8E8;
   .swiper-title {
     padding: 0 20px;
     margin: 40px 0;
@@ -693,19 +704,23 @@
   }
   .swiper-images {
     display: flex;
-    height: 366px;
     padding-left: 20px;
     margin-bottom: 40px;
     overflow: auto;
-    img {
-      height: 100%;
-      margin-right: 24px;
+    li {
+      img {
+        display: inline-block;
+        width: 205px;
+        height: 366px;
+        margin-right: 24px;
+      }
     }
   }
 }
 
 .detail-summary {
   padding: 0 20px 40px;
+  border-bottom: 1px solid #E8E8E8;
   .summary-title {
     margin: 40px 0;
     font-size: 32px;
@@ -724,6 +739,7 @@
   height: 80px;
   line-height: 80px;
   position: fixed;
+  z-index: 1;
   bottom: 0;
   background: @primary;
   font-size: 36px;
