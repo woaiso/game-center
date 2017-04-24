@@ -22,11 +22,12 @@ export default class GamesLibrary extends React.Component<any, any> {
         href: 'javascript:;'
       }
     ]
-    const game2 = gamelist[1];
+    let gamelists = JSON.parse(JSON.stringify(gamelist));
+    const game2 = gamelists[1];
     game2.title = '动作射击';
     game2.games = game2.games.reverse();
 
-    const game3 = gamelist[0];
+    const game3 = gamelists[0];
     game3.title = '跑酷竞速';
     return (
       <Page>
